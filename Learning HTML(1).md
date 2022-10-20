@@ -17,7 +17,7 @@ closing tag는 opening tag에 front slash가 들어있는 모양
 
 #### The Body
 web page를 구축할때 가장 주요한 요소 <body>와 </body>사이에 다양한 유형의 content를 추가할 수 있음
-'''html
+```html
 <body> 
   <h1>Hello World</h1>
   <p>This paragraph is a child of the body element</p>
@@ -25,11 +25,11 @@ web page를 구축할때 가장 주요한 요소 <body>와 </body>사이에 다�
     <p>This paragraph is a child of the div element and a grandchild of the body element</p>  
   </div> 
 </body>
-'''
+```
 
 #### HTML Structure
 html은 가족구조로 형성되어 있음
-'''html
+```html
 <body>
   <h1>Hello World</h1>
   <p>This paragraph is a child of the body element</p>
@@ -37,7 +37,7 @@ html은 가족구조로 형성되어 있음
     <p>This paragraph is a child of the div element and a grandchild of the body element</p>  
   </div> 
 </body>
-'''
+```
 Heading
 h1 ~ h6 까지 크기순서로 있음
 텍스트 크기를 원하는크기로 만드는데 쓰는거 같음
