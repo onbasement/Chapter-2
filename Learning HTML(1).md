@@ -7,9 +7,9 @@ Introduction to HTML & HTML Document Standards
 HTML은 Hyper Text Markup Language의 약자
 HTML은 기본구조를 만드는것 나중에 CSS와 JavaScript로 꾸밀 수 있음
 opening tag와 closing tag가 존재하고 그 사이에 content가 들어간다
-An opening tag (<p>)
-The content (“My name is onbasement” text)
-A closing tag (</p>)
+An opening tag ("<p>")
+The content (“My name is onbasement”)
+A closing tag ("</p>")
 ex) <p>My name is onbasement</p>
 이 코드 한줄이 하나의 html element
 opening tag는 <>안에 들어가있음
