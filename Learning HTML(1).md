@@ -2,19 +2,22 @@ Learning HTML(1)
 =============
 Introduction to HTML & HTML Document Standards
 ----------------------------------------------
-# html
-html foundation
+## HTML
+#### HTML Anatomy
+HTML은 Hyper Text Markup Language의 약자
+HTML은 기본구조를 만드는것 나중에 CSS와 JavaScript로 꾸밀 수 있음
+opening tag와 closing tag가 존재하고 그 사이에 content가 들어간다
 An opening tag (<p>)
-The content (“Hello World!” text)
+The content (“My name is onbasement” text)
 A closing tag (</p>)
-opening tag 와 closing tag 사이에 content를 넣음
-이렇게 넣은것들이 하나의 html element
+ex) <p>My name is onbasement</p>
+이 코드 한줄이 하나의 html element
 opening tag는 <>안에 들어가있음
-closing tag는 </> forward slash 가 있음
+closing tag는 opening tag에 front slash가 들어있는 모양
 
-<body>
-여는 태그와 닫는 태그안에 텍스트,이미지 및 버튼을 비롯한 다양한 유형의 콘텐츠가 들어감
-
+#### The Body
+web page를 구축할때 가장 주요한 요소 <body>와 </body>사이에 다양한 유형의 content를 추가할 수 있음
+'''html
 <body> 
   <h1>Hello World</h1>
   <p>This paragraph is a child of the body element</p>
@@ -22,9 +25,19 @@ closing tag는 </> forward slash 가 있음
     <p>This paragraph is a child of the div element and a grandchild of the body element</p>  
   </div> 
 </body>
+'''
 
-body > h1,p,div > p 순서임 부모-자식
-
+#### HTML Structure
+html은 가족구조로 형성되어 있음
+'''html
+<body>
+  <h1>Hello World</h1>
+  <p>This paragraph is a child of the body element</p>
+  <div>
+    <p>This paragraph is a child of the div element and a grandchild of the body element</p>  
+  </div> 
+</body>
+'''
 Heading
 h1 ~ h6 까지 크기순서로 있음
 텍스트 크기를 원하는크기로 만드는데 쓰는거 같음
