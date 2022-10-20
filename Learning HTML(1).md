@@ -3,7 +3,7 @@ Learning HTML(1)
 Introduction to HTML & HTML Document Standards
 ----------------------------------------------
 ## HTML
-#### HTML Anatomy
+> ### HTML Anatomy
 HTML은 Hyper Text Markup Language의 약자
 HTML은 기본구조를 만드는것 나중에 CSS와 JavaScript로 꾸밀 수 있음
 opening tag와 closing tag가 존재하고 그 사이에 content가 들어간다
@@ -15,19 +15,16 @@ ex) <p>My name is onbasement</p>
 opening tag는 <>안에 들어가있음
 closing tag는 opening tag에 front slash가 들어있는 모양
 
-#### The Body
+### The Body
 web page를 구축할때 가장 주요한 요소 <body>와 </body>사이에 다양한 유형의 content를 추가할 수 있음
 ```html
 <body> 
   <h1>Hello World</h1>
-  <p>This paragraph is a child of the body element</p>
-  <div>
-    <p>This paragraph is a child of the div element and a grandchild of the body element</p>  
-  </div> 
+  <p>This paragraph is a child of the body element</p> 
 </body>
 ```
 
-#### HTML Structure
+### HTML Structure
 html은 가족구조로 형성되어 있음
 ```html
 <body>
