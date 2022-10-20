@@ -2,8 +2,7 @@ Learning HTML(1)
 =============
 Introduction to HTML & HTML Document Standards
 ----------------------------------------------
-## HTML
-> ### _HTML Anatomy_
+### _HTML Anatomy_
 > HTML은 Hyper Text Markup Language의 약자
 > HTML은 기본구조를 만드는것 나중에 CSS와 JavaScript로 꾸밀 수 있음
 > opening tag와 closing tag가 존재하고 그 사이에 content가 들어간다
