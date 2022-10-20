@@ -1,5 +1,7 @@
-This is an H1
+Learning HTML(1)
 =============
+Introduction to HTML & HTML Document Standards
+----------------------------------------------
 # html
 html foundation
 An opening tag (<p>)
