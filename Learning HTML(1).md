@@ -1,21 +1,26 @@
-Learning HTML(1)
+Learning HTML(1)<br/>
 =============
-Introduction to HTML & HTML Document Standards
+1.&nbsp;Introduction to HTML & HTML Document Standards
 ----------------------------------------------
-### _HTML Anatomy_
-> HTML은 Hyper Text Markup Language의 약자
-> HTML은 기본구조를 만드는것 나중에 CSS와 JavaScript로 꾸밀 수 있음
-> opening tag와 closing tag가 존재하고 그 사이에 content가 들어간다
-> An opening tag (<p>)
-> The content (My name is onbasement)
-> A closing tag (</p>)
-> ex) <p>My name is onbasement</p>
-> 이 코드 한줄이 하나의 html element
-> opening tag는 <>안에 들어가있음
-> closing tag는 opening tag에 front slash가 들어있는 모양
+## 1.1 About HTML
+> HTML은 Hyper Text Markup Language의 약자<br/>
+> HTML은 기본구조를 만드는것 나중에 CSS와 JavaScript로 꾸밀 수 있음<br/>
+> opening tag와 closing tag가 존재하고 그 사이에 content가 들어간다<br/>
+ ```html
+ An opening tag (<p>)
+ opening tag는 <>안에 들어가있음
 
-### The Body
-web page를 구축할때 가장 주요한 요소 <body>와 </body>사이에 다양한 유형의 content를 추가할 수 있음
+ The content (My name is onbasement)
+
+ A closing tag (</p>)
+ closing tag는 opening tag에 front slash가 들어있는 모양
+
+ <p>My name is onbasement</p>
+ 이 코드 한줄이 하나의 html element
+ ```
+
+## 1.2 The Body
+> web page를 구축할때 가장 주요한 요소 <body>와 </body>사이에 다양한 유형의 content를 추가할 수 있다<br/>
 ```html
 <body> 
   <h1>Hello World</h1>
@@ -23,67 +28,97 @@ web page를 구축할때 가장 주요한 요소 <body>와 </body>사이에 다�
 </body>
 ```
 
-### HTML Structure
-html은 가족구조로 형성되어 있음
+## 1.3 HTML Structure
+> html은 가족구조로 형성되어 있다<br/>
 ```html
 <body>
   <h1>Hello World</h1>
   <p>This paragraph is a child of the body element</p>
   <div>
-    <p>This paragraph is a child of the div element and a grandchild of the body element</p>  
+   <p>This paragraph is a child of the div element and a grandchild of the body element</p>  
   </div> 
 </body>
 ```
-Heading
-h1 ~ h6 까지 크기순서로 있음
-텍스트 크기를 원하는크기로 만드는데 쓰는거 같음
 
-div
-페이지를 나눌때 사용 html의 요소를 그룹화하는 데 매우 유용함
-div는 링크,이미지 또는 비디오와 같은 텍스트 또는 기타 html이 들어갈수 있음
+### 1.3.1 Headings
+> h1 ~ h6 까지 크기순서대로 존재한다<br/>
+> 텍스트 크기를 원하는크기로 만드는데 쓰는거 같다<br/>
+```html
+<h1>This is H1<h1>
+<h2>This is H1<h2>
+<h3>This is H1<h3>
+<h4>This is H1<h4>
+<h5>This is H1<h5>
+<h6>This is H1<h6>
+```
 
-attributes
-오픈태그 안에 추가하여 정보제공, 스타일변경등에 사용가능하게 만들어줌
-name과 value로 구성되어있음
-일반적으로 id를 사용함
+### 1.3.2 Divs
+> 페이지를 나눌때 사용한다<br/>
+> html의 요소를 그룹화하는 데 매우 유용하다<br/>
+> div안에는 링크,이미지 또는 비디오와 같은 텍스트 또는 기타 html이 들어갈수 있다<br/>
+```html
+<div>
+  <h1>Introduction</h1>
+</div>
+```
+
+### 1.3.3 Attributes
+> 오픈태그 안에 추가하여 정보제공, 스타일변경등에 사용가능하게 만들어준다<br/>
+> name과 value로 구성되어있다<br/>
+> 가장 흔히 id를 사용한다<br/>
+```html
 <div id="intro">
   <h1>Introduction</h1>
 </div>
+```
 
-<p> paragraphs
-<span> 을 사용하면 다른 텍스트와 분리해줌
+### 1.3.4 Displaying Text
+> 문자를 추가하고 싶을때 사용한다<br/>
+> span을 사용하면 다른 텍스트와 분리해준다<br/>
+```html
 <div>
-  <h1>Technology</h1>
+  <p><span>Self-driving cars</span> are anticipated to replace up to 2 million jobs 
+    over the next two decades.</p>
 </div>
-<div>
-  <p><span>Self-driving cars</span> are anticipated to replace up to 2 million jobs over the next two decades.</p>
-</div>
+```
+### 1.3.5 Styling Text
+> em은 italic체로 강조해준다<br/>
+> strong은 bold체로 강조해준다<br/>
+```html
+  <p><strong>The Nile River</strong> is the <em>longest</em> river in the world, 
+    measuring over 6,850 kilometers long (approximately 4,260 miles).</p>
+```
 
-<em> <strong>
-em 은 italic체로 강조해줌
-strong은 bold체로 강조해줌
+### 1.3.6 Line Breaks
+> br은 한줄을 띄어준다<br/>
+```html
+<p>The Nile River is the longest river <br> in the world, 
+  measuring over 6,850 <br> kilometers long (approximately 4,260 <br> miles).</p>
+```
 
-<br>
-enter와 같은 역할을 함
-
-<ul> <li>
-<ul>을 사용하면 목록 구성가능
-목록안의 요소앞뒤에는 <li>를 써줘야함
+### 1.3.7 Unordered Lists
+> ul을 사용하면 순서가 없는 목록을 구성하는게 가능하다<br/>
+> 이때 li를 앞뒤로 써줘야한다<br/>
+```html
 <ul>
   <li>Limes</li>
   <li>Tortillas</li>
   <li>Chicken</li>
 </ul>
+```
 
-<ol> <li>
-순서가 있는 목록을 구성할때 <ol>을 사용
-1. 2. 이렇게 작성됨
+### 1.3.8 Ordered Lists
+> ol 사용하면 순서가 있는 목록을 구성하는게 가능하다<br/>
+> 코드를 실행해보면 1. 2. 이런식으로 출력된다<br/>
+> 이때 li를 앞뒤로 써줘야한다<br/>
+```html
 <ol>
   <li>Preheat the oven to 350 degrees.</li>
   <li>Mix whole wheat flour, baking soda, and salt.</li>
   <li>Cream the butter, sugar in separate bowl.</li>
   <li>Add eggs and vanilla extract to bowl.</li>
 </ol>
+```
 
 <img> src
 이미지를 넣고 싶을때 사용
