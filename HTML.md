@@ -523,3 +523,127 @@ project-folder/
     </tr>
   </tfoot>
 </table>
+
+<br/><br/><br/>
+
+4.&nbsp;HTML Forms
+------------------------------------------------------
+## 4.1 HTTP request
+> form이 있는 웹페이지에 방문을 해서 폼 내용을 입력하면 폼 안에 있는 데이터를 서버로 보내준다<br/>
+> 이때 서버에서 폼 데이터를 처리후 html 페이지를 다시 보내준다<br/>
+> form 태그 속성에는 name, action, method,target 등이 있다<br/>
+> **name**은 폼을 식별하기 위한 이름을 지정한다<br/>
+> **action**은 폼을 전송할 서버 쪽 스크립트 파일을 지정한다<br/>
+> **method**는 폼을 서버에 전송할 http 메소드를 정한다(GET or POST)<br/>
+> **GET**방식은 데이터가 외부에 노출되어 보안에 취약하여 주로 읽을 때 사용하는 method이다<br/>
+> **POST**방식은 지정된 리소스에서 데이터를 수정,삭제할 때 사용한다<br/>
+> **target**은 action에서 지정한 스크립트 파일을 현재 창이 아닌 다른 위치에 열도록 지정한다<br/>
+```html
+form action="/practice.html" method="POST">
+<h1>Burger</h1>
+<p>very delicious burger</p>
+</form>
+```
+
+## 4.2 Text Input
+> input은 텍스트를 입력하는 창을 만들때 사용한다
+> type에 따라 입력창이 조금씩 달라진다
+> 
+
+text면 text를 입력가능
+그 요소를 어디에 저장할지 name으로 할당가능 name에 써있는곳에 input이 지정된 type으로 저장됨
+value를 통해 해당칸을 미리 채워둘수도 있음
+
+label을 이용하면 무엇을 위한것인지 알릴수있음
+이때 input에 id를 추가해 주어야함
+또한 해당 element가 클릭되면 상응하는 input이 강조됨
+<form action="/example.html" method="POST">
+  <label for="meal">What do you want to eat?</label>
+  <br>
+  <input type="text" name="food" id="meal">
+</form>
+
+password를 이용하면 입력창에 보이지않음
+
+number을 이용하면 숫자를 입력할 수 있고 버튼으로 원하는 step만큼 +-할수있는 창을 생성가능
+<label for="amount">How many patties would you like?</label>           
+  <input id="amount" name="amount" type="number" step="1"> 
+
+range를 이용하면 volume조절 버튼같은 창을 만들수 있음 최소값 최대값 간격을 설정할 수 있음
+<span>Rare</span>
+<input id="doneness" name="doneness" type="range" min="0" max="5" step="0.5">
+<span>Well-Done</span>
+
+checkbox를 이용하면 요소를 체크할수 있는 창을 만들 수 있다.
+이때 value값을 써줘야 확인란의 속성값을 할당할수 있음
+name이 같아도 id가 다르면 unique하게 저장됨
+<label for="lettuce">Lettuce</label>
+<input id="lettuce" name="topping" type="checkbox" value="lettuce">
+<label for="tomato">Tomato</label>
+<input id="tomato" name="topping" type="checkbox" value="tomato">
+이러면 체크박스 두칸이 생김
+
+radio를 이용하면 오직 하나의 옵션만 가능한 라디오버튼을 만들수있음
+이때는 name을 같게해서 name에 있는것중에 하나만 선택하게 만들수 있다
+
+input 대신 select이용
+select를 이용하면 여러 항목중에 고를수 있게할 수 있다
+<select id="bun" name="bun">
+  <option value="sesame">Sesame</option>
+  <option value="potato">Potato</option>
+  <option value="tomato">Tomato</option>
+</select>
+
+datalist는 input에서 type이 text일때 정해진 요소중에 고를수 있게 해준다 이때 그냥 고를수도 있지만 검색어 처럼 밑에 뜨게 만들수도 있는게 select와 다른점
+datalist id="sauces">
+  <option value="ketchup"></option>
+  <option value="mayo"></option>
+  <option value="choco"></option>
+</datalist>
+
+textarea를 이용하면 자유롭게 작성할 수 있는 공간을 만들수 있다 댓글창,블로그 같은거
+이때 열고 닫는 사이에 문자를 넣으면 비어있을때 그 문자가 출력됨
+row와 col의 개수도 설정가능
+<textarea id="extra" name="extra" rows="3" cols="40">Service
+</textarea>
+
+submit을 사용하면 해당사항을 보낼 수 있다.
+이때 value값에 들어간것이 빈칸에 들어가고 누르면 제출되는 창을 생성할수 있다
+<form>
+  <input type="submit" value="submit">
+</form>
+
+
+HTML Validation
+server-side validation 이건 서버에서 하는거
+client-side validation 이건 서버로 전송되기 전에 html내에서 진행되는거 
+
+requiring an input
+input 맨 뒤에 required를 써주면 입력되지 않았을때 써주라는 경고창을 표시
+<input type="number" name="guess" id="guess" required>
+
+set min and max
+input에서 type이 number일때 min max를 설정하면 해당값범위를 벗어났을때 경고창 표시
+
+checking text length
+input에서 type이 text일때 minlength maxlength를 설정하면 해당범위를 텍스트의 길이가 벗어났을때 경고창 표시
+
+Matching a pattern ???
+정해진 형식을 벗어나면 경고창 표시
+regex에 대해서 공부해볼것
+
+semantic html
+semantic하게 html을 작성후에 div를 사용하는게 좋음 div로 모두 나누게 되면 코드해석이 힘들어짐
+<header> 가장위에 제목같은것을 작성할때
+<nav> 링크를 걸고 이동하게 만드는 코드
+<main> 가장 중요한 정보들을 담고있는 코드
+<footer> 보통 contact information, copyright, site map 같은것들을 작성할때
+<section> 기사의 제목등이 적혀있는 코드
+<article> 세부정보들이 적혀있는 코드들
+<aside> main content를 제외한 나머지들이 적혀있는 코드 참고문헌, 미주, 코멘트, 인용문등
+<figure> media를 text와 분리할때 씀
+<figcaption> media에 대한 부가 설명 이때 <p>를 사용하지 않는이유는 <p>를 사용하면 해당 설명이 figure을 따라다니지 않지만 figcaption은 figure을 따라다님
+<audio>를 추가하면 audio가 생성됨 src로 파일을 넣고 type에 해당파일에 맞게 작성을 해주면 된다. 이때 controls를 추가하면 play mute와 같은 기능이 자동으로 지원된다. autoplay도 있음!
+<audio controls>
+  <source src="https://content.codecademy.com/courses/SemanticHTML/dogBarking.mp3" type="audio/mp3">
+</audio>
