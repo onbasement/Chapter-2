@@ -546,13 +546,121 @@ form action="/practice.html" method="POST">
 ```
 
 ## 4.2 Text Input
-> input은 텍스트를 입력하는 창을 만들때 사용한다
-> type에 따라 입력창이 조금씩 달라진다
-> 
+> input은 정보를 입력하는 창을 만들때 사용한다<br/>
+> type에 따라 입력창이 조금씩 달라진다<br/>
+### 4.2.1 Type="text"
+> 텍스트를 입력하는 한줄의 입력 필드를 만든다<br/>
+> value를 통해 해당 빈칸에 텍스트를 채워놓을 수도 있다<br/>
+```html
+<form>
+  First name:<br>
+  <input type="text" name="firstname" value="write here"><br>
+</form>
+```
 
-text면 text를 입력가능
-그 요소를 어디에 저장할지 name으로 할당가능 name에 써있는곳에 input이 지정된 type으로 저장됨
-value를 통해 해당칸을 미리 채워둘수도 있음
+### 4.2.2 Type="password"
+> password 필드를 만든다<br/>
+> 이때 password 필드의 문자는 별표나 동그라미로 표시된다<br/>
+```html
+<form>
+  User password:<br>
+  <input type="password" name="psw">
+</form>
+```
+
+### 4.2.3 Type="submit"
+> form-handler에게 폼을 제출하는 버튼을 만든다<br/>
+> form-handler는 폼의 action 속성에 명시되며 일반적으로 수신된 입력을 가지고 무언가를 수행한다<br/>
+```html
+<form action="action_page.php">
+  First name:<br>
+  <input type="text" name="firstname" value="Mickey"><br>
+  Last name:<br>
+  <input type="text" name="lastname" value="Mouse"><br><br>
+  <input type="submit" value="Submit">
+</form>
+```
+
+### 4.2.4 Type="radio"
+> 오직 하나의 옵션만 선택 가능한 선택지들을 만든다<br/>
+> name을 같게해서 같은 name을 가진 것 중에 오직 하나만 선택하게 만들 수 있다<br/>
+```html
+<form>
+  <p>What is sum of 1 + 1?</p>
+  <input type="radio" id="two" name="answer" value="2">
+  <label for="two">2</label>
+  <br>
+  <input type="radio" id="eleven" name="answer" value="11">
+  <label for="eleven">11</label>
+</form>
+```
+
+### 4.2.5 Type="checkbox"
+> 여러개의 요소를 체크할수 있는 창을 만든다<br/>
+> value값을 써줘야 확인란의 속성값을 할당할 수 있다<br/>
+> name이 같아도 id가 다르면 unique하게 저장된다<br/>
+```html
+<form>
+ <label for="lettuce">Lettuce</label>
+ <input id="lettuce" name="topping" type="checkbox" value="lettuce">
+ <label for="tomato">Tomato</label>
+ <input id="tomato" name="topping" type="checkbox" value="tomato">
+</form>
+```
+
+### 4.2.6 Type="button"
+> click할 수 있는 버튼을 만든다<br/>
+```html
+<form>
+ <input type="button" onclick="alert('Hello World!')" value="Click Me!">
+</form>
+```
+
+### 4.2.7 Type="number"
+> 숫자를 입력하는 필드를 만든다<br/>
+> 버튼으로 원하는 step만큼 +-할 수 있는 창을 생성 가능하다<br/>
+
+```html
+<form>
+  Quantity (between 1 and 5):
+  <input type="number" name="quantity" min="1" max="5">
+</form>
+```
+
+### 4.2.8 Type="date"
+### 4.2.9 Type="color"
+### 4.2.10 Type="range"
+### 4.2.11 Type="month"
+### 4.2.12 Type="week"
+### 4.2.13 Type="time"
+### 4.2.14 Type="datetime"
+### 4.2.15 Type="datetime-local"
+### 4.2.16 Type="email"
+### 4.2.17 Type="search"
+### 4.2.18 Type="tel"
+### 4.2.19 Type="url"
+> 다양한 attribute로 input을 제한할 수 있다<br/>
+> > * **disabled**는 불리안 속성으로 속성을 명시하지 않으면 자동으로 false 값을 가지게 된다<br/>
+> > * **min**은 허용되는 최솟값을 명시한다 이때 날짜를 입력하면 허용되는 최소 날짜를 명시한다<br/>
+> > * **max**는 허용되는 최댓값을 명시한다 이때 날짜를 입력하면 허용되는 최대 날짜를 명시한다<br/>
+> > ```html
+> > <form action="/examples/media/action_target.php" method="get">
+> >     생년월일 : <input type="date" name="bday" min="1900-01-01" max="2019-01-01"><br>
+> >     학년 : <input type="number" name="grader" min="1" max="4" ><br>
+> >     <input type="number">
+> > </form>
+> > ```
+> > * **maxlength**는 허용되는 최대 문자수를 명시한다<br/>
+> > ```html
+> > <form action="/examples/media/action_target.php" method="get">
+> >    이름 : <input type="text" name="st_name" maxlength="8"><br>
+> >    학번 : <input type="text" name="st_id" maxlength="12"><br>
+> >    학과 : <input type="text" name="department"><br>
+> >    <input type="number">
+> > </form>
+> > ```
+
+
 
 label을 이용하면 무엇을 위한것인지 알릴수있음
 이때 input에 id를 추가해 주어야함
@@ -563,7 +671,6 @@ label을 이용하면 무엇을 위한것인지 알릴수있음
   <input type="text" name="food" id="meal">
 </form>
 
-password를 이용하면 입력창에 보이지않음
 
 number을 이용하면 숫자를 입력할 수 있고 버튼으로 원하는 step만큼 +-할수있는 창을 생성가능
 <label for="amount">How many patties would you like?</label>           
@@ -574,17 +681,8 @@ range를 이용하면 volume조절 버튼같은 창을 만들수 있음 최소�
 <input id="doneness" name="doneness" type="range" min="0" max="5" step="0.5">
 <span>Well-Done</span>
 
-checkbox를 이용하면 요소를 체크할수 있는 창을 만들 수 있다.
-이때 value값을 써줘야 확인란의 속성값을 할당할수 있음
-name이 같아도 id가 다르면 unique하게 저장됨
-<label for="lettuce">Lettuce</label>
-<input id="lettuce" name="topping" type="checkbox" value="lettuce">
-<label for="tomato">Tomato</label>
-<input id="tomato" name="topping" type="checkbox" value="tomato">
-이러면 체크박스 두칸이 생김
 
-radio를 이용하면 오직 하나의 옵션만 가능한 라디오버튼을 만들수있음
-이때는 name을 같게해서 name에 있는것중에 하나만 선택하게 만들수 있다
+
 
 input 대신 select이용
 select를 이용하면 여러 항목중에 고를수 있게할 수 있다
