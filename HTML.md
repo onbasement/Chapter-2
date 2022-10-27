@@ -628,62 +628,158 @@ form action="/practice.html" method="POST">
 ```
 
 ### 4.2.8 Type="date"
+> 날짜를 입력하는 필드를 만든다<br/>
+> 브라우저에 따라 날짜 선택기가 입력 필드로 표시될 수도 있다<br/>
+```html
+<form>
+  Birthday:
+  <input type="date" name="bday">
+</form>
+```
+
 ### 4.2.9 Type="color"
+> 색상을 입력하는 필드를 만든다<br/>
+> 브라우저에 따라 색상 선택기가 입력 필드로 표시될 수도 있다<br/>
+```html
+<form>
+  Select your favorite color:
+  <input type="color" name="favcolor">
+</form>
+```
+
 ### 4.2.10 Type="range"
+> 정해진 범위 안의 값을 입력하는 필드를 만든다<br/>
+> 브라우저에 따라 슬라이드 컨트롤 필드가 표시될 수도 있다<br/>
+```html
+<form>
+  <input type="range" name="points" min="0" max="10">
+</form>
+```
+
 ### 4.2.11 Type="month"
+> 사용자가 월과 연도를 입력하는 필드를 만든다<br/>
+> 브라우저에 따라 날짜 선택기 필드가 표시될 수도 있다<br/>
+```html
+<form>
+  Birthday (month and year):
+  <input type="month" name="bdaymonth">
+</form>
+```
+
 ### 4.2.12 Type="week"
+> 사용자가 주와 연도를 입력하는 필드를 만든다<br/>
+> 브라우저에 따라 날짜 선택기 필드가 표시될 수도 있다<br/>
+```html
+<form>
+  Select a week:
+  <input type="week" name="week_year">
+</form>
+```
+
 ### 4.2.13 Type="time"
-### 4.2.14 Type="datetime"
-### 4.2.15 Type="datetime-local"
-### 4.2.16 Type="email"
-### 4.2.17 Type="search"
-### 4.2.18 Type="tel"
-### 4.2.19 Type="url"
+> 사용자가 시간을 입력하는 필드를 만든다<br/>
+> 브라우저에 따라 시간 선택기 필드가 표시될 수도 있다<br/>
+```html
+<form>
+  Select a time:
+  <input type="time" name="usr_time">
+</form>
+```
+
+### 4.2.14 Type="datetime-local"
+> 사용자가 날짜와 시간을 선택하는 필드를 만든다<br/>
+> 브라우저에 따라 날짜 선택기 필드가 표시될 수도 있다<br/>
+```html
+<form>
+  Birthday (date and time):
+  <input type="datetime-local" name="bdaytime">
+</form>
+```
+
+### 4.2.15 Type="email"
+> email 주소를 입력하는 필드를 만든다<br/>
+> 브라우저에 따라 폼이 제출 될 때 자동으로 email주소 유효성 검사를 실시한다<br/>
+```html
+<form>
+  E-mail:
+  <input type="email" name="email">
+</form>
+```
+
+### 4.2.16 Type="search"
+> 검색하는 필드를 만든다<br/>
+```html
+<form>
+  Search Google:
+  <input type="search" name="googlesearch">
+</form>
+```
+
+### 4.2.17 Type="tel"
+> 전화번호를 입력하는 필드를 만든다<br/>
+```html
+<form>
+  Telephone:
+  <input type="tel" name="usrtel">
+</form>
+```
+
+### 4.2.18 Type="url"
+> url주소를 포함하는 입력 필드를 만든다<br/>
+> 브라우저에 따라 폼이 제출 될 때 자동으로 url 필드의 값 유효성 검사를 실시한다<br/>
+```html
+<form>
+  Add your homepage:
+  <input type="url" name="homepage">
+</form>
+```
+
+## 4.3 Attribute
 > 다양한 attribute로 input을 제한할 수 있다<br/>
-> > * **disabled**는 불리안 속성으로 속성을 명시하지 않으면 자동으로 false 값을 가지게 된다<br/>
-> > * **min**은 허용되는 최솟값을 명시한다 이때 날짜를 입력하면 허용되는 최소 날짜를 명시한다<br/>
-> > * **max**는 허용되는 최댓값을 명시한다 이때 날짜를 입력하면 허용되는 최대 날짜를 명시한다<br/>
-> > ```html
-> > <form action="/examples/media/action_target.php" method="get">
-> >     생년월일 : <input type="date" name="bday" min="1900-01-01" max="2019-01-01"><br>
-> >     학년 : <input type="number" name="grader" min="1" max="4" ><br>
-> >     <input type="number">
-> > </form>
-> > ```
-> > * **maxlength**는 허용되는 최대 문자수를 명시한다<br/>
-> > ```html
-> > <form action="/examples/media/action_target.php" method="get">
-> >    이름 : <input type="text" name="st_name" maxlength="8"><br>
-> >    학번 : <input type="text" name="st_id" maxlength="12"><br>
-> >    학과 : <input type="text" name="department"><br>
-> >    <input type="number">
-> > </form>
-> > ```
+> * **disabled**는 불리안 속성으로 속성을 명시하지 않으면 자동으로 false 값을 가지게 된다<br/>
+> ```html
+> <form action="/examples/media/action_target.php" method="get">
+>   이름 : <input type="text" name="st_name"><br>
+>   학번 : <input type="text" name="st_id"><br>
+>   학과 : <input type="text" name="department" disabled><br>
+>   <input type="submit">
+> </form>
+> ```
+> * **min**은 허용되는 최솟값을 명시한다 이때 날짜를 입력하면 허용되는 최소 날짜를 명시한다<br/>
+> * **max**는 허용되는 최댓값을 명시한다 이때 날짜를 입력하면 허용되는 최대 날짜를 명시한다<br/>
+> ```html
+> <form action="/examples/media/action_target.php" method="get">
+>     생년월일 : <input type="date" name="bday" min="1900-01-01" max="2019-01-01"><br>
+>     학년 : <input type="number" name="grader" min="1" max="4" ><br>
+>     <input type="number">
+> </form>
+> ```
+> * **maxlength**는 허용되는 최대 문자수를 명시한다<br/>
+> ```html
+> <form action="/examples/media/action_target.php" method="get">
+>    이름 : <input type="text" name="st_name" maxlength="8"><br>
+>    학번 : <input type="text" name="st_id" maxlength="12"><br>
+>    학과 : <input type="text" name="department"><br>
+>    <input type="number">
+> </form>
+> ```
 
 
-
-label을 이용하면 무엇을 위한것인지 알릴수있음
-이때 input에 id를 추가해 주어야함
-또한 해당 element가 클릭되면 상응하는 input이 강조됨
+## 4.4 label
+> label 요소는 for 속성을 사용하여 다른요소와 결합할 수 있다<br>
+> 이때 label 요소의 for 속성값은 결합하고자 하는 요소의 id 속성값과 같아야한다<br>
+> label을 결합하고자 하는 요소 내부에 위치시키면 for 속성을 사용하지 않고 요소를 결합시킬 수 있다<br>
+> label을 사용하면 마우스로 해당 text를 클릭하면 label요소와 연결된 요소를 곧바로 선택할 수 있다<br>
+> label을 사용할 수 있는 요소는 button, input, meter, output, progress, select, textarea가 있다<br>
+```html
 <form action="/example.html" method="POST">
   <label for="meal">What do you want to eat?</label>
   <br>
   <input type="text" name="food" id="meal">
 </form>
+```
 
-
-number을 이용하면 숫자를 입력할 수 있고 버튼으로 원하는 step만큼 +-할수있는 창을 생성가능
-<label for="amount">How many patties would you like?</label>           
-  <input id="amount" name="amount" type="number" step="1"> 
-
-range를 이용하면 volume조절 버튼같은 창을 만들수 있음 최소값 최대값 간격을 설정할 수 있음
-<span>Rare</span>
-<input id="doneness" name="doneness" type="range" min="0" max="5" step="0.5">
-<span>Well-Done</span>
-
-
-
-
+## 4.5 select
 input 대신 select이용
 select를 이용하면 여러 항목중에 고를수 있게할 수 있다
 <select id="bun" name="bun">
