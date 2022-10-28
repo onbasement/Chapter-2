@@ -132,10 +132,10 @@ Learn HTML<br/>
 ```
 
 ### 1.3.7 Videos
-> video와 src를 통해 video를 넣을수 있다.
-> width height를 통해 브라우저에 표시되는 비디오의 크기를 설정한다
-> controls는 기본 비디오 컨트롤(재생,일시정지,볼륨,전체화면등)을 포함하는 비디오를 생성한다
-> 여는태그 닫는태그 사이에 있는 텍스트는 브라우저가 비디오를 표시할수 없을때 표시된다
+> video와 src를 통해 video를 넣을수 있다<br/>
+> width height를 통해 브라우저에 표시되는 비디오의 크기를 설정한다<br/>
+> controls는 기본 비디오 컨트롤(재생,일시정지,볼륨,전체화면등)을 포함하는 비디오를 생성한다<br/>
+> 여는태그 닫는태그 사이에 있는 텍스트는 브라우저가 비디오를 표시할수 없을때 표시된다<br/>
 ```html
 <video src="myVideo.mp4" width="320" height="240" controls>
  Video not supported
@@ -998,7 +998,7 @@ form action="/practice.html" method="POST">
 </article>
 ```
 
-## 6.8 Aside
+## 6.8 aside
 > main과 분리된 페이지 영역을 정의할 때 사용한다<br/>
 > 주로 참고문헌, 미주, 코멘트, 인용문등이 포함된다<br/>
 ```html
@@ -1012,7 +1012,7 @@ form action="/practice.html" method="POST">
 </aside>
 ```
 
-## 6.9 Figure
+## 6.9 figure
 > 사진이나 다이어그램과 같이 media를 text와 분리할 때 사용한다<br/>
 > 해당 content를 제거해도 문서의 흐름에 영향이 없어야 한다<br/>
 ```html
@@ -1021,7 +1021,7 @@ form action="/practice.html" method="POST">
 </figure>
 ```
 
-## 6.10 Figcaption
+## 6.10 figcaption
 > figure요소의 caption을 정의할 때 사용한다<br/>
 > media에 대한 부가 설명이 포함된다<br/>
 > figure 요소의 첫번째나 마지막 자식 요소로만 위치할 수 있다<br/>
@@ -1033,7 +1033,7 @@ form action="/practice.html" method="POST">
 </figure>
 ```
 
-## 6.11 Audio
+## 6.11 audio
 > 음악이나 사운드를 정의 할 때 사용한다<br/>
 > src에 파일 주소를 넣고 type에 파일 형식을 작성해주면 된다<br/>
 > 현재 mp3, wav, ogg를 지원한다<br/>
