@@ -1035,10 +1035,10 @@ form action="/practice.html" method="POST">
 
 ## 6.11 Audio
 > 음악이나 사운드를 정의 할 때 사용한다<br/>
-> src에 파일 주소를 넣고 type에 파일 형식을 작성해주면 된다
-> 현재 mp3, wav, ogg를 지원한다
-> controls를 추가하면 play, mute와 같은 기능이 자동으로 지원된다
-> autoplay를 추가하면 자동재생기능이 생성된다
+> src에 파일 주소를 넣고 type에 파일 형식을 작성해주면 된다<br/>
+> 현재 mp3, wav, ogg를 지원한다<br/>
+> controls를 추가하면 play, mute와 같은 기능이 자동으로 지원된다<br/>
+> autoplay를 추가하면 자동재생기능이 생성된다<br/>
 ```html
 <audio controls>
   <source src="https://content.codecademy.com/courses/SemanticHTML/dogBarking.mp3" type="audio/mp3">
