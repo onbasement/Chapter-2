@@ -820,36 +820,227 @@ form action="/practice.html" method="POST">
 </form>
 ```
 
-HTML Validation
-server-side validation 이건 서버에서 하는거
-client-side validation 이건 서버로 전송되기 전에 html내에서 진행되는거 
+<br/><br/><br/>
 
-requiring an input
-input 맨 뒤에 required를 써주면 입력되지 않았을때 써주라는 경고창을 표시
-<input type="number" name="guess" id="guess" required>
+5.&nbsp;Form Validation
+------------------------------------------------------
+## 5.1 Introduction to HTML Form Validation
+> validation에는 여러가지 종류가 있다<br/>
+> server-side validation은 서버에서 데이터가 전송될 때 발생한다<br/>
+> 로그인 페이지에서 아이디와 비밀번호를 조합하여 엑세스 할때 사용된다<br/>
+> client-side validation은 서버로 전송되기 전 브라우저에서 데이터를 확인한다<br/>
+> 서버에서 정보를 확인하는데 걸리는 시간을 절약할 수 있다<br/>
+> 또한 악성코드로 부터 서버를 보호하는데 도움이 된다<br/>
 
-set min and max
-input에서 type이 number일때 min max를 설정하면 해당값범위를 벗어났을때 경고창 표시
 
-checking text length
-input에서 type이 text일때 minlength maxlength를 설정하면 해당범위를 텍스트의 길이가 벗어났을때 경고창 표시
+## 5.2 requiring an input
+> 선택 사항이 아닌 필수 사항을 입력하는 창에 사용한다<br/>
+> required를 사용하면 채우지 않고 제출할 때 경고메시지를 표시한다<br/>
+```html
+<form action="/example.html" method="POST">
+  <label for="allergies">Do you have any dietary restrictions?</label>
+  <br>
+  <input id="allergies" name="allergies" type="text" required>
+  <br>
+  <input type="submit" value="Submit">
+</form>
+```
 
-Matching a pattern ???
-정해진 형식을 벗어나면 경고창 표시
-regex에 대해서 공부해볼것
+## 5.3 set min & max
+> 입력 field가 number일때 최소값 또는 최대값을 할당할 수 있다<br/>
+> 해당 값 범위를 벗어난 값을 제출할 때 경고메시지를 표시한다<br/>
+```html
+<form action="/example.html" method="POST">
+  <label for="guests">Enter # of guests:</label>
+  <input id="guests" name="guests" type="number" min="1" max="4">
+  <input type="submit" value="Submit">
+</form>
+```
 
-semantic html
-semantic하게 html을 작성후에 div를 사용하는게 좋음 div로 모두 나누게 되면 코드해석이 힘들어짐
-<header> 가장위에 제목같은것을 작성할때
-<nav> 링크를 걸고 이동하게 만드는 코드
-<main> 가장 중요한 정보들을 담고있는 코드
-<footer> 보통 contact information, copyright, site map 같은것들을 작성할때
-<section> 기사의 제목등이 적혀있는 코드
-<article> 세부정보들이 적혀있는 코드들
-<aside> main content를 제외한 나머지들이 적혀있는 코드 참고문헌, 미주, 코멘트, 인용문등
-<figure> media를 text와 분리할때 씀
-<figcaption> media에 대한 부가 설명 이때 <p>를 사용하지 않는이유는 <p>를 사용하면 해당 설명이 figure을 따라다니지 않지만 figcaption은 figure을 따라다님
-<audio>를 추가하면 audio가 생성됨 src로 파일을 넣고 type에 해당파일에 맞게 작성을 해주면 된다. 이때 controls를 추가하면 play mute와 같은 기능이 자동으로 지원된다. autoplay도 있음!
+## 5.4 checking text length
+> 입력 field가 text일때 최소 문자수 또는 최대 문자수를 할당할 수 있다<br/>
+> 해당 길이 범위를 벗어난 값을 제출할 때 경고메시지를 표시한다<br/>
+```html
+<form action="/example.html" method="POST">
+  <label for="summary">Summarize your feelings in less than 250 characters</label>
+  <input id="summary" name="summary" type="text" minlength="5" maxlength="250" required>
+  <input type="submit" value="Submit">
+</form>
+```
+
+## 5.5 Matching a pattern
+> 입력 field에 입력값을 제한 할 수 있다<br/>
+> 설정된 정규 표현식이 아닌 값을 제출할 때 경고메시지를 표시한다<br/>
+```html
+<form action="/example.html" method="POST">
+  <label for="payment">Credit Card Number (no spaces):</label>
+  <br>
+  <input id="payment" name="payment" type="text" required pattern="[0-9]{14,16}">
+  <input type="submit" value="Submit">
+</form>
+```
+> 다양한 정규 표현식이 존재한다<br/>
+> 주로 사용되는 예시는 다음과 같다<br/>
+> > 1. 숫자만
+> > ```html
+> > <input type="text" name="patternValue" pattern="\d*">
+> > <input type="text" name="patternValue" pattern="^[0-9]+$">
+> > ```
+> > 2. 영문 대소문자만
+> > ```html
+> > <input type="text" name="patternValue" pattern="^[a-zA-Z]+$">
+> > ```
+> > 3. 영문 대소문자만(띄어쓰기 및 공백 가능)
+> > ```html
+> > <input type="text" name="patternValue" pattern="^[a-zA-Z\s]+$">
+> > ```
+> > 4. 숫자, 영문 대소문자만
+> > ```html
+> > <input type="text" name="patternValue" pattern="^[a-zA-Z0-9]+$">
+> > ```
+> > 5. 최소 8자리에서 최대 16자리 까지 숫자,영문,특수문자 각 1개 이상 포함(암호 유효성 검사)
+> > ```html
+> > <input type="text" name="patternValue" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,16}$">
+> > ```
+
+<br/><br/><br/>
+
+6.&nbsp;Semantic HTML
+------------------------------------------------------
+## 6.1 Introduction to Semantic HTML
+> semantic은 의미있는 의미론 이라는 뜻이다<br/>
+> html 요소를 선택할 때 표시되는 방식이 아니라 의미에 따라서 선택하는 것이 semantic html이다<br/>
+> 접근성, 검색엔진, 웹 개발자끼리의 협업 등에서 장점을 가진다<br/>
+> 큰 마트에 표지판을 세우고 구역을 나누는 것과 비슷하다<br/>
+
+## 6.2 header
+> header는 도입부에 사용되며 nav 링크나 제목요소, 로고나 아이콘, 저자정보를 포함한다<br/>
+> html 문서는 여러개의 header 요소를 포함할 수 있다<br/>
+```html
+<article>
+    <header>
+        <h3>날씨 정보</h4>
+        <h4>2월 19일</h4>
+        <p>- 기상청 제공 -</p>
+    </header>
+    <p>서울 : 맑음</p>
+    <p>대전 : 흐림</p>
+    <p>부산 : 비</p>
+</article>
+```
+
+## 6.3 nav
+> nav는 다른 페이지나 현재 페이지의 다른 부분과 연결되는 링크를 생성한다<br/>
+> 보통 메뉴, 목차, 인덱스 등에 사용된다<br/>
+```html
+<nav>
+    <a href="/html/intro">HTML</a> |
+    <a href="/css/intro">CSS</a> |
+    <a href="/javascript/intro">JavaScript</a>
+</nav>
+```
+
+## 6.4 main
+> main은 해당 문서의 main content를 정의할 때 사용한다<br/>
+> main의 content는 문서의 중심 주제 또는 주요 기능과 직접적으로 관련되어 있어야한다<br/>
+> 하나의 문서에는 단 하나의 main 요소가 존재해야 한다<br/>
+> article aside footer header nav 요소의 자손 요소가 되어서는 안된다<br/>
+```html
+<main>
+    <h1>바나나</h1>
+    <p>바나나는 바나나는 파초과 바나나 속에 속하는 
+     숙근성 영년생 열대과수를 총칭한다.</p>
+    <article>
+        <h2>다이어트 식품</h2>
+        <p>바나나는 탄수화물이 약 27%이고 비타민 A와 C가 풍부하며, 
+         100g당 87kcal의 열량을 갖는다.</p>
+    </article>
+    <article>
+        <h2>다양한 섭취법</h2>
+        <p>바나나는 열매를 주식으로 이용할 뿐 아니라 
+         미성숙한 열매는 채소로 다양한 요리에 응용된다.</p>
+    </article>
+</main>
+```
+
+## 6.5 footer
+> 문서나 특정 section의 footer를 정의할 때 사용한다<br/>
+> 보통 저자, 저작권, 연락처, sitemap 등의 정보를 포함한다<br/>
+```html
+<footer>
+    <p>Copyright © 2018 tcpschool.co.,Ltd. All rights reserved.</p>
+    <address>Contact webmaster for more information. 070-1234-5678</address>
+</footer>
+```
+
+## 6.6 section
+> html 문서에 포함된 독립적인 section을 정의할 때 사용한다<br/>
+> 관련있는 내용을 section 요소로 묶어 표시한다<br/>
+> section 요소는 보통 제목 요소를 자식 요소로 포함하는 경우가 많다<br/>
+```html
+<section>
+  <h2>Fun Facts About Cricket</h2> 
+</section>
+```
+
+## 6.7 article
+> 해당 문서나 페이지와 완전히 독립적으로 구성할 수 있는 요소를 정의할 때 사용한다<br/>
+> 포럼포스트, 블로그포스트, 보도기사, 논평 등이 내용으로 포함된다<br/>
+```html
+<article>
+    <h2>2월 19일 날씨 정보</h2>
+    <h3>서울</h3>
+    <p>맑음</p>
+    <h3>대전</h3>
+    <p>흐림</p>
+    <h3>부산</h3>
+    <p>비</p>
+</article>
+```
+
+## 6.8 Aside
+> main과 분리된 페이지 영역을 정의할 때 사용한다<br/>
+> 주로 참고문헌, 미주, 코멘트, 인용문등이 포함된다<br/>
+```html
+<article>
+  <p>The first World Series was played between Pittsburgh and Boston in 1903 and was a nine-game series.</p>
+</article>
+<aside>
+  <p>
+   Babe Ruth once stated, “Heroes get remembered, but legends never die.” 
+  </p>
+</aside>
+```
+
+## 6.9 Figure
+> 사진이나 다이어그램과 같이 media를 text와 분리할 때 사용한다<br/>
+> 해당 content를 제거해도 문서의 흐름에 영향이 없어야 한다<br/>
+```html
+<figure>
+  <img src="overwatch.jpg">
+</figure>
+```
+
+## 6.10 Figcaption
+> figure요소의 caption을 정의할 때 사용한다<br/>
+> media에 대한 부가 설명이 포함된다<br/>
+> figure 요소의 첫번째나 마지막 자식 요소로만 위치할 수 있다<br/>
+> p를 사용할때는 해당 설명이 figure과 독립적이지만 figcaption을 사용하면 의존하게 된다<br/>
+```html
+<figure>
+  <img src="overwatch.jpg">
+  <figcaption>This picture shows characters from Overwatch.</figcaption>
+</figure>
+```
+
+## 6.11 Audio
+> 음악이나 사운드를 정의 할 때 사용한다<br/>
+> src에 파일 주소를 넣고 type에 파일 형식을 작성해주면 된다
+> 현재 mp3, wav, ogg를 지원한다
+> controls를 추가하면 play, mute와 같은 기능이 자동으로 지원된다
+> autoplay를 추가하면 자동재생기능이 생성된다
+```html
 <audio controls>
   <source src="https://content.codecademy.com/courses/SemanticHTML/dogBarking.mp3" type="audio/mp3">
 </audio>
+```
