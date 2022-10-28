@@ -1,4 +1,4 @@
-Learning HTML<br/>
+Learn HTML<br/>
 =============
 1.&nbsp;Introduction to HTML & HTML Document Standards
 ----------------------------------------------
@@ -780,33 +780,45 @@ form action="/practice.html" method="POST">
 ```
 
 ## 4.5 select
-input 대신 select이용
-select를 이용하면 여러 항목중에 고를수 있게할 수 있다
+> select를 사용하면 여러 항목중에 고를수 있게할 수 있다<br>
+> radio와 다른점은 옵션이 많아졌을때 버튼형식이 아닌 스크롤 형식으로 표시하여 더 깔끔하다<br>
+```html
 <select id="bun" name="bun">
   <option value="sesame">Sesame</option>
   <option value="potato">Potato</option>
   <option value="tomato">Tomato</option>
 </select>
+```
 
-datalist는 input에서 type이 text일때 정해진 요소중에 고를수 있게 해준다 이때 그냥 고를수도 있지만 검색어 처럼 밑에 뜨게 만들수도 있는게 select와 다른점
-datalist id="sauces">
+### 4.6 Datalist
+> datalist는 input에서 type이 text일때 정해진 요소중 선택하는 필드를 생성한다<br>
+> select와 다른점은 입력창에 검색을 하면 옵션을 찾을 수 있다<br>
+```html
+<datalist id="sauces">
   <option value="ketchup"></option>
   <option value="mayo"></option>
   <option value="choco"></option>
 </datalist>
+```
 
-textarea를 이용하면 자유롭게 작성할 수 있는 공간을 만들수 있다 댓글창,블로그 같은거
-이때 열고 닫는 사이에 문자를 넣으면 비어있을때 그 문자가 출력됨
-row와 col의 개수도 설정가능
+### 4.7 Textarea
+> 자유롭게 작성할 수 있는 필드를 생성한다<br>
+> 댓글창이나 블로그에 자주 사용된다<br>
+> 여는코드와 닫는코드 사이에 문장을 작성하면 공백일때 해당문장이 출력된다<br>
+> row와 col의 개수도 설정가능하다<br>
+```html
 <textarea id="extra" name="extra" rows="3" cols="40">Service
 </textarea>
+```
 
-submit을 사용하면 해당사항을 보낼 수 있다.
-이때 value값에 들어간것이 빈칸에 들어가고 누르면 제출되는 창을 생성할수 있다
+### 4.8 submit
+> submit을 사용하면 양식을 서버에 보낼 수 있다<br>
+> value값에 들어간 것이 보내는 버튼에 들어가고 누르면 제출된다<br>
+```html
 <form>
   <input type="submit" value="submit">
 </form>
-
+```
 
 HTML Validation
 server-side validation 이건 서버에서 하는거
