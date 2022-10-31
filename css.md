@@ -27,6 +27,7 @@ Learn Css<br/>
 ### 1.2.2 Inline Style
 > css inline style이란 css코드를 html코드 사이사이에 넣어서 작성하는 방식이다<br/>
 > opening tag안에 작성되며 attribute가 존재한다<br/>
+> 여기서 attribute는 style이고 자체로 selecter의 역할을 한다<br/>
 > css코드를 html코드 안에 바로 사용할 수 있는 장점이 있다<br/>
 > 하지만 코드 수정이 어렵고 html의 목적인 정보전달에 불필요해서 잘 쓰지않는다<br/>
 ```html
@@ -59,51 +60,76 @@ Learn Css<br/>
 <link href='./style.css' rel='stylesheet'>
 ```
 
+<br/><br/><br/>
 
-
-intro to css
-처음엔 html만 존재 전자문서라는 정보를 만들 수 있었다
-아름다우며 보기좋은 형태로 만들기 위한게 css
-font 태그를 통해 다른색을 사용할 수 있다
-font 태그는 정보를 담지 않기때문에 정보전달을 하기에 부적합한 코드가 되버림
-또한 중복된 font 태그를 css를 통해 제거할 수 있다
-가독성이 높아지고 유지보수가 편해진다
-
-css를 사용한다는 것을 html 문법으로 이야기 해주어야 한다
-<style> 태그 안쪽에 css를 작성하면 된다
-
-<style>
-a {
-  color: red;text-decoration: none;
+2.&nbsp;Selecter
+------------------------------------------------------
+## 2.1 Type
+> type selecter는 가장 넓은 범위의 selecter이며 힘이 가장 약하다<br/>
+> type selceter가 중복되면 가장 최근의 코드에 따라 style 된다<br/>
+> 다음은 p tag에 style을 입히는 방법이다<br/>
+```html
+p {
+  color: green;
 }
-</style>
+```
 
-css 기본문법
-html 코드 안에서도 style="color:red"를 사용가능
-Selecter a{} 이게 selecter 누구에게 적용 할 것인지 정한다
-declaration color:black; 이게 선언이고 무엇을 적용할 것인지
-property는 color, value는 red
-style태그를 사용하면 selecter가 포함됨
-style 속성을 사용하면 해당 부분에 직접 추가하면 됨
+## 2.2 Universal
+> universal selecter는 모든 요소에 style을 적용시키는 selecter이다<br/>
+```html
+* { 
+  font-family: Verdana;
+}
+```
 
-css 선언 찾으면 다나옴
-text-decoration: none; 을 사용하면 밑줄이 없어짐
-text-align: center; 가운데 정렬
-text-size: 45px; 텍스트 크기 설정
+## 2.3 Class
+> class selecter는 중간 범위의 selecter이다<br/>
+> 원하는 element의 opening tag에 class를 만들고 해당 class를 target하는 방식이다<br/>
+> 꼭 class 설정이 선행되어야 한다<br/>
+> 다음은 title class에 style을 입히는 방법이다<br/>
+```html
+<h1 class='title'> ... </h1>
+```
+```css
+.title {
+  color: teal;
+}
+```
 
-css 선택자 이것도 찾으면 다나옴
-class를 이용해서 우리가 원하는 태그만을 바꿀수 있다
-class="saw"라고 하면 해당 문장이 saw class에 속하게 된다
-그리고 .saw라고 선택자를 쓰면 class가 saw인 모든 태그를 가리키게 된다
-class는 띄어쓰기로 구분해서 여러개를 쓸 수가 있다 
-이때 class가 여러개면 가장 마지막 명령을 따른다
+## 2.4 Multiple Classes
+> class selecter를 여러개 적용시킬 수 있다<br/>
+> class를 만들어 줄때 여러개를 만들면 class를 원하는 개수만큼 가질 수 있다<br/>
+> class는 띄어쓰기로 구분한다<br/>
+```html
+<h1 class='green bold'> ... </h1>
+```
+```css
+.green {
+  color: green;
+}
+ 
+.bold {
+  font-weight: bold;
+}
+```
 
-이게 별로여서 id 태그를 이용한다
-#active라고 하면 id가 active인 태그가 선택된다
-#grid ol을 하면 부모가 grid ol만 선택된다
-id선택자는 class 선택자를 이긴다
-class선택자는 태그 선택자를 이긴다
-id값은 유일무이한 값이기 때문에 중복하면 안된다
+## 2.5 ID
+> id selecter는 가장 좁은범위이고 힘이 가장 센 selecter이다<br/>
+> 원하는 element의 opening tag에 id를 만들고 해당 id를 target하는 방식이다<br/>
+> id는 유일무이하기에 id는 중복이 불가하고 하나의 element는 하나의 id만 가진다<br/>
+```html
+ <h1 class='title uppercase' id='article-title'>Top Vacation Spots</h1>
+```
+```css
+#article-title {
+  font-family: cursive;
+}
+```
+
+
+
+
+
 
 box model
 테두리를 만든다
