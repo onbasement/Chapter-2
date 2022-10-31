@@ -11,33 +11,55 @@ Learn Css<br/>
 
 ## 1.2 CSS Anatomy
 ### 1.2.1 CSS Ruleset
-> css ruleset이란 css코드를 head부분에서 style 태그와 함께 작성하는 방식이다<br/>
-> 이때 style태그는 html이 css코드를 인식하는데 도움을 준다<br/>
-> css ruleset에는 selecter declaration 이 있다<br/>
+> css에는 selecter declaration 이 있다<br/>
 > declaration은 property와 value로 나뉜다<br/>
 > selecter는 style하고 싶은 element를 target하는데 사용한다<br/>
 > property는 바꾸고 싶은 내용이 포함된다<br/>
 > value는 해당 element의 property를 어떤것으로 바꿀지에 대한 내용이다<br/>
-> ### 1.2.2 CSS inline style
+```html
+<style>
+  p {
+      color:blue;
+  }
+</style>
+```
+
+### 1.2.2 Inline Style
 > css inline style이란 css코드를 html코드 사이사이에 넣어서 작성하는 방식이다<br/>
 > opening tag안에 작성되며 attribute가 존재한다<br/>
-> 코드 수정이 어렵고 html의 목적인 정보전달에 불필요해서 잘 쓰지않는다<br/>
+> css코드를 html코드 안에 바로 사용할 수 있는 장점이 있다<br/>
+> 하지만 코드 수정이 어렵고 html의 목적인 정보전달에 불필요해서 잘 쓰지않는다<br/>
+```html
+<p style='color:blue;'>Hello world</p>
+```
 
+### 1.2.3 Internal Stylesheet
+> internal stylesheet란 css코드를 head부분에서 style 태그와 함께 작성하는 방식이다<br/>
+> 이때 style태그는 html이 css코드를 인식하는데 도움을 준다<br/>
+```html
+<head>
+  <title>Vacation World</title>
+  <style>
+    p {
+      color: green;
+    }
+  </style>
+</head>
+```
 
-
-
-inline styles
-style은 html의 attribute 태그이다
-
-internal stylesheet
-코드 내부에서 head에 style 태그를 이용하여 작성하는방법
-
-external stylesheet
-바로옆에 style.css에 작성을 하는 방법
-
-linking the css file
-link를 이용해 css 파일을 불러와야함
+### 1.2.4 External Stylesheet
+> html문서에는 오직 html 코드만 남겨두고 css코드를 다른파일에 저장하는 방식이다<br/>
+> 현재 개발할때 가장 많이 사용하는 방식이다<br/>
+> href와 rel을 통해 css파일을 html문서에 로드 해온다<br/>
+> href='./style.css'는 relative URL로 css문서를 불러오는 것이다<br/>
+> 이때 rel=stylesheet는 스타일 시트로 사용할 외부 리소스를 불러온다는 뜻이다<br/>
+> 불러오는 링크는 다음과 같다<br/>
+```html
+<html>
 <link href='./style.css' rel='stylesheet'>
+```
+
+
 
 intro to css
 처음엔 html만 존재 전자문서라는 정보를 만들 수 있었다
