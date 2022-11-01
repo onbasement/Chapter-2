@@ -126,7 +126,25 @@ p {
 }
 ```
 
+## 2.6 Attribute
+> href나 src같은 attribute를 target하여 적용시키는 selecter이다<br/>
+> 특정 단어를 이용해 원하는 attribute를 target하여 적용시키기도 가능하다<br/>
+```css
+[href]{
+   color: magenta;
+}
+```
+```css
+img[src*='winter'] {
+  height: 50px;
+}
+이코드는 img src에 winter라는 단어가 포함된 이미지만 적용을 받는다
+```
 
+## 2.7 Pseudo-class
+> pseudo-class란 선택하고자 하는 html 요소의 특별한 상태를 명시할 때 사용한다
+> 여러가지 pseudo-class가 존재한다
+> http://ways2web.weebly.com/uploads/5/4/4/8/54485903/3112201_orig.png
 
 
 
