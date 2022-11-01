@@ -142,9 +142,40 @@ img[src*='winter'] {
 ```
 
 ## 2.7 Pseudo-class
-> pseudo-class란 선택하고자 하는 html 요소의 특별한 상태를 명시할 때 사용한다
-> 여러가지 pseudo-class가 존재한다
-> http://ways2web.weebly.com/uploads/5/4/4/8/54485903/3112201_orig.png
+> pseudo-class란 선택하고자 하는 html 요소의 특별한 상태를 명시할 때 사용한다<br/>
+> 여러가지 pseudo-class가 존재한다<br/><br/>
+<img src="http://ways2web.weebly.com/uploads/5/4/4/8/54485903/3112201_orig.png" width="600px" height="450px" alt="Pseudo-class"></img><br/>
+> 마우스 커서를 올리면 반응하는 hover를 이용한 예시이다<br/>
+```css
+a:hover {
+  color: darkorange;
+}
+a 요소에 커서를 올리면 darkorange색으로 변한다
+```
+
+## 2.8 Chaining
+> 특정 element에 한정하여 class들을 선택할 수 있다<br/>
+> 다음 예시는 h1중 class가 special인 element를 선택하는 코드이다<br/>
+```css
+h1.special {
+ 
+}
+```
+
+## 2.9 Descendant Combinator
+> 다른 html element안에 들어있는 element를 선택할 때 사용한다<br/>
+> 다음 코드는 description이라는 class를 가진 element를 먼저 찾고 그 하위에 있는 h5를 바꾼 예시이다<br/>
+```css
+.description h5 {
+  color: blueviolet;
+}
+```
+```css
+질문
+h5.description 랑 .description h5는 찾는순서외에 다른점은 없는건가?
+```
+
+
 
 
 
