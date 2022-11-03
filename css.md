@@ -175,10 +175,147 @@ h1.special {
 h5.description 랑 .description h5는 찾는순서외에 다른점은 없는건가?
 ```
 
+## 2.10 Chaining and Specificity
+> ul 내부의 li 안에 있는 요소를 접근할 수 있다<br/>
+> li h4라는 코드를 작성하면 h4라는 element들중에서 li의 자손인 h4만 선택할 수 있다<br/>
+```css
+li h4 {
+  color: gold;
+}
+```
 
+## 2.11 Multiple Selectors
+> 여러개의 특징을 가진 element들을 하나의 코드로 나타내고 싶을때 사용한다<br/>
+> 코드의 중복을 방지해준다<br/>
+```css
+h1 {
+  font-family: Georgia;
+}
+ 
+.menu {
+  font-family: Georgia;
+}
+수정전 코드 (declaration이 두번 중복된다)
+```
 
+<br/>
 
+```css
+h1, 
+.menu {
+  font-family: Georgia;
+}
+수정후 코드 (훨씬 깔끔하다)
+```
 
+<br/><br/><br/>
+
+3.&nbsp;Visual Rules
+------------------------------------------------------
+## 3.1 Introduction to Visual Rules
+> CSS의 목적은 web page에 style을 입히는 것이다<br/>
+> 기본적인 css visual rule들을 배워보는 단원이다<br/>
+
+## 3.2 Font Family
+> 글꼴을 바꾸는 property다<br/>
+> font-family: ~~ 로 작성한다<br/>
+> * font가 사용자의 컴퓨터나 site에 다운로드 되어있어야한다<br/>
+> * 다수의 웹에서 지원하는 web safe fonts가 있다<br/>
+> * 사용하는 font가 둘이상의 단어로 구성되어있다면 ;로 묶어주는것이 좋다<br/>
+```css
+h1 {
+  font-family: 'Courier New';
+}
+```
+
+## 3.3 Font Size
+> 글꼴의 크기를 바꾸는 property다<br/>
+> font-size: ~~ 로 작성한다<br/>
+> px을 이용하여 바꿀 수 있다<br/>
+```css
+p {
+  font-size: 18px;
+}
+```
+
+## 3.4 Font Weight
+> 글꼴의 굵기를 바꾸는 property다<br/>
+> font-weight: ~~ 로 작성한다<br/>
+> normal, bold 등의 value가 있다<br/>
+```css
+p {
+  font-weight: bold;
+}
+```
+
+## 3.5 Text Align
+> 문자 정렬을 해주는 property다<br/>
+> text-align: ~~ 로 작성한다<br/>
+> left, center, right, justify(좌우에 딱맞게 간격조절)등의 value가 있다<br/>
+```css
+h1 {
+  text-align: right;
+}
+```
+
+## 3.6 Color and Background Color
+> color를 바꿀때 사용하는 property다<br/>
+> color은 foreground color와 background color의 영향을 받는다<br/>
+> foreground color는 element의 색이다<br/>
+> color: ~~ 로 작성한다<br/>
+> background color는 글자 배경의 색이다<br/>
+> background-color: ~~ 로 작성한다<br/>
+```css
+h1 {
+  color: red;
+  background-color: blue;
+}
+```
+
+## 3.7 Opacity
+> 투명도를 조절할때 사용하는 selecter다<br/>
+> value는 0과 1 사이의 값이며 0에 가까워질수록 투명해진다<br/>
+> opacity: ~~ 로 작성한다<br/>
+```css
+.overlay {
+  opacity: 0.5;
+}
+```
+
+## 3.8 Background Image
+> background에 image를 넣을때 사용하는 selecter다<br/>
+> value에는 url과 링크가 들어간다<br/>
+> background-image: url(' 주소 ') 로 작성한다<br/>
+> 주소에 external site 또는 relative file path를 통해 이미지를 불러온다<br/>
+```css
+.main-banner {
+  background-image: url('https://www.example.com/image.jpg');
+}
+external site를 이용한 코드
+```
+
+<br/>
+
+```css
+.main-banner {
+  background-image: url('images/mountains.jpg');
+}
+relative file path를 이용한 코드
+```
+
+## 3.9 Important
+> 해당 declaration의 힘을 가장 세게 만들어주는 방법이다<br/>
+> !important 를 사용하면 해당 코드의 target은 다른 declaration들을 무시한다<br/>
+```css
+p {
+  color: blue !important;
+}
+ 
+.main p {
+  color: red;
+}
+위 코드에서 main class의 p element도 모두 blue로 바뀐다
+```
 
 box model
 테두리를 만든다
@@ -191,17 +328,7 @@ border-style:solid;
 display:inline; 이라고 하면 inline element가 된다
 display:block; 을 쓰면 block element가 된다
 display:none; 을 쓰면 화면에서 사라진다
-선택자에 ,를 사용하면 중복을 지울 수 있다
-h1, a{
-border-width:5px;
-border-color:red;
-border-style:solid;
-}
-더줄이면
-h1, a{
-border:5px solid red;
-}
-순서는 중요하지 않음
+
 padding:20px; 을 사용하면 문자와 차지하는 크기 사이에 20px이 생김
 margin:0;을 하면 요소 사이에 간격이 없어짐
 margin:20px;을 하면 20px만큼 간격이 생긴다
