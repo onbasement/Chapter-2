@@ -317,11 +317,111 @@ p {
 위 코드에서 main class의 p element도 모두 blue로 바뀐다
 ```
 
-box model
-테두리를 만든다
-border-width:5px;
-border-color:red;
-border-style:solid;
+<br/><br/><br/>
+
+4.&nbsp;The Box Model
+------------------------------------------------------
+## 4.1 Introduction to Box Model
+> element가 box안에 들어있다<br/>
+> borders, paddings, margins가 있다<br/>
+
+## 4.2 The Box Model
+> 가장 안쪽에 content가 있고 width, height로 크기를 조정할 수 있다<br/>
+> content 바깥쪽에 padding이 있다<br/>
+> padding 바깥쪽에 border이 있다<br/>
+> 가장 바깥쪽에 margin이 있다<br/>
+> <img src="https://content.codecademy.com/courses/updated_images/diagram-boxmodel_Updated_1-01.svg" width="600px" height="450px" alt="Box model"></img><br/>
+
+## 4.3 Height and Width
+> content의 가로 세로 크기를 조정할때 사용한다<br/>
+> px로 설정하면 어디서 보든 똑같은 크기로 설정할 수 있다<br/>
+```css
+p {
+  height: 80px;
+  width: 240px;
+}
+```
+
+## 4.4 Borders
+> element를 감싸는 선이다<br/>
+> width, style, color를 바꿀 수 있다<br/>
+> 설정해주지 않은값은 default값으로 적용된다<br/>
+```css
+p {
+  border: 3px solid coral;
+}
+```
+```css
+p {
+  height: 80px;
+  width: 240px;
+  border: solid coral;
+}
+```
+
+## 4.5 Border Radius
+> Border의 모서리를 둥글게 만들 수 있다<br/>
+> px을 이용하면 해당 픽셀만큼 둥글어진다<br/>
+> %를 이용하면 해당 %만큼 둥글어진다<br/>
+```css
+div.container {
+  height: 60px;
+  width: 60px;
+  border: 3px solid blue;
+  border-radius: 50%;
+}
+```
+
+## 4.6 Padding
+> 사진의 frame과 비슷하다<br/>
+> top, right, bottom, left를 이용해 다른값을 줄 수 있다<br/>
+```css
+p.content-header {
+  border: 3px solid fuchsia;
+  padding-bottom: 10px;
+}
+```
+> value가 4개일때 top, right, bottom, left 순서<br/>
+> value가 3개일때 top, left&right, bottom 순서<br/>
+> value가 2개일때 top&bottom, left&right 순서<br/>
+```css
+p.content-header {
+  padding: 6px 11px 4px 9px;
+}
+```
+
+## 4.7 Margin
+> 가장 바깥쪽의 공간이다<br/>
+> top, right, bottom, left에 다른값을 줄 수 있다<br/>
+```css
+p {
+  border: 3px solid DarkSlateGrey;
+  margin-right: 15px;
+}
+```
+> value가 4개일때 top, right, bottom, left 순서<br/>
+> value가 3개일때 top, left&right, bottom 순서<br/>
+> value가 2개일때 top&bottom, left&right 순서<br/>
+```css
+p {
+  margin: 6px 10px 5px 12px;
+}
+```
+
+## 4.8 Auto
+> auto를 사용하면 browser에서 자동으로 가운데 정렬을 시켜준다<br/>
+> width 설정이 선행되어야 한다<br/>
+> 0 auto는 상하는 0으로 좌우는 자동으로 조정한다는 뜻이다<br/>
+```css
+div.headline {
+  width: 400px;
+  margin: 0 auto;
+}
+```
+
+
+
+
 
 전체를 쓰는 element를 block level element
 자신의 크기만큼을 쓰는 element를 inline element라고 한다
@@ -329,14 +429,6 @@ display:inline; 이라고 하면 inline element가 된다
 display:block; 을 쓰면 block element가 된다
 display:none; 을 쓰면 화면에서 사라진다
 
-padding:20px; 을 사용하면 문자와 차지하는 크기 사이에 20px이 생김
-margin:0;을 하면 요소 사이에 간격이 없어짐
-margin:20px;을 하면 20px만큼 간격이 생긴다
-width:100px;을 전체를 쓰던것의 가로 크기가 100px로 바뀐다
-height도 마찬가지
-검사를 이용하면 도움을 받을 수 있다
-
-밑 테두리: border-bottom:1px solid gray;
 
 그리드
 div, span 는 의미가없고 디자인 용도로만 쓰는 태그
