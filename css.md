@@ -419,6 +419,84 @@ div.headline {
 }
 ```
 
+## 4.9 Minimum and Maximum Height and Width
+> 해당 box의 최소, 최대 높이와 넓이를 설정할 수 있다<br/>
+> text의 경우 브라우저 창이 너무 좁아지거나 확장되어 읽기 어려울때 유용하다<br/>
+> 이때 max값이 box안의 content보다 작아지면 읽을 수 없는 내용이 될수도 있기에 주의해야한다<br/>
+```css
+p {
+  min-width: 300px;
+  max-width: 600px;
+} 
+너비조절
+p {
+  min-height: 150px;
+  max-height: 300px;
+} 
+높이 조절
+```
+
+## 4.10 Overflow
+> content가 box 바깥으로 넘칠때 overflow라는 property를 이용한다<br/>
+> common value로 hidden, scroll, visible등이 있다<br/>
+> overflow-x, overflow-y를 이용하여 horizontal과 vertical로 나눌수 있다<br/>
+```css
+p {
+  overflow: scroll; 
+}
+```
+
+## 4.11 Resetting Defaults
+> 모든 browser는 각자의 default stylesheet가 있다<br/>
+> clean한 slate에서 작업하기위해 해당 코드를 사용해주는 것이 좋다<br/>
+```css
+* {
+  margin: 0;
+  padding: 0;
+}
+```
+
+## 4.12 Visibility
+> 해당 element를 숨기거나 겹쳐지게 만들 수 있는 property다<br/>
+> value값으로 hidden, visible, collapse를 가진다<br/>
+> 해당 content만 없어지고 빈 box는 그대로 나오게된다<br/>
+```css
+<ul>
+  <li>Explore</li>
+  <li>Connect</li>
+  <li class="future">Donate</li>
+</ul>
+
+.future {
+  visibility: hidden;
+}
+Donate가 사라지게 만드는 코드
+```
+
+<br/><br/><br/>
+
+5.&nbsp;Changing the box model
+------------------------------------------------------
+## 5.1 Box Model:Content-Box
+> box model의 기본값은 content box이다<br/>
+> 설정한 값에따라 그대로 크기가 커진다<br/>
+> browser에서 사용하는 content-box는 다음과 같다<br/>
+> <img src="https://content.codecademy.com/courses/updated_images/diagram-boxmodel_Updated_1-01.svg" width="600px" height="450px" alt="Content-Box"></img><br/>
+
+## 5.2 Box Model:Border-Box
+> box model을 border-box로 reset할 수 있다<br/>
+> height와 width를 설정하면 content가 border, padding의 크기에 따라 자동으로 조정된다<br/>
+> <img src="https://content.codecademy.com/courses/web-101/htmlcss1-diagram__borderbox.svg" width="600px" height="450px" alt="Border-Box"></img><br/>
+
+<br/><br/><br/>
+
+6.&nbsp;Display and Positioning
+------------------------------------------------------
+## 6.1 Position
+
+
+
+
 
 
 
