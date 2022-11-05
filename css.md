@@ -493,6 +493,38 @@ Donate가 사라지게 만드는 코드
 6.&nbsp;Display and Positioning
 ------------------------------------------------------
 ## 6.1 Position
+> Block 요소는 자체적으로 공간을 차지해서 서로 겹치지 않는다<br/>
+> element의 기본 위치는 position이라는 property를 이용해 변경할 수 있다<br/>
+> position은 value값으로 static, relative, absolute, fixed, sticky를 가진다<br/>
+> static은 기본값이다<br/>
+```css
+question {
+  position: static;
+}
+```
+## 6.2 Position: Relative
+> relative를 이용해 box를 원하는 위치에 옮겨놓을 수 있다<br/>
+> top, bottom, left, right를 이용하여 원하는 px만큼 이동한다<br/>
+> top: 50px은 해당 box 위에 50px만큼 공간을 남긴다<br/>
+```css
+green-box {
+  background-color: green;
+  position: relative;
+  top: 50px;
+  left: 120px;
+}
+```
+
+## 6.3 Position: Absolute
+> absolute는 다른요소를 무시하고 옮겨진다<br/>
+> box 가장 좌측 상단 모서리를 기준으로 옮겨진다<br/>
+> box 바깥으로 element가 나갈 수도있다<br/>
+```css
+header {
+position: absolute;
+  width: 100%;
+}
+```
 
 
 
