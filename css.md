@@ -526,6 +526,193 @@ position: absolute;
 }
 ```
 
+## 6.4 Position: Fixed
+> fixed는 화면에서 고정된다<br/>
+> 주로 navigation bar에 이용된다<br/>
+> top, bottom, left, right를 이용해 위치를 고정시킬 수 있다<br/>
+> <img src="https://static-assets.codecademy.com/Courses/Learn-CSS/Display-Position/Fixed.gif" width="600px" height="450px" alt="Border-Box"></img><br/>
+``` css
+.title {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+```
+
+
+## 6.5 Position: Sticky
+> 정해진 범위를 벗어나면 해당 위치에 고정된다<br/>
+> parent container의 가장 밑에 도달하면 다시 문서와 함께 scroll된다<br/>
+> <img src="https://static-assets.codecademy.com/Courses/Learn-CSS/Display-Position/Sticky.gif" width="600px" height="450px" alt="Border-Box"></img><br/>
+```css
+.box-bottom {
+  background-color: darkgreen;
+  position: sticky;
+  top: 240px;
+}
+```
+
+## 6.6 Z-Index
+> box끼리 겹쳐졌을때 어떤 element가 앞에 올지 정해준다<br/>
+> z-index에 입력된 integer가 클수록 앞으로 오게된다<br/>
+```css
+.blue-box {
+  background-color: blue;
+  position: relative;
+  z-index: 1;
+}
+ 
+.green-box {
+  background-color: green;
+  position: relative;
+  top: -170px;
+  left: 170px;
+}
+```
+
+## 6.7 Display: Inline
+> display라는 property는 해당 element의 horizontal space share여부를 결정한다<br/>
+> display: none은 해당 element가 
+> value값으로 inline, block, inline-block을 가진다<br/>
+> inline element는 줄바꿈이 일어나지 않고 바로 전 element에 붙어서 시작한다<br/>
+> 사용자가 크기를 지정할 수 없고 크기를 그대로 사용해야한다<br/>
+> vertical-algin과 text-algin이 모두 작동한다<br/>
+```html
+To learn more about <em>inline</em> elements, read <a href="#">MDN documentation</a>.
+<em>이나 <a>는 모두 inline element라서 줄바꿈이 일어나지 않는다
+```
+```css
+h1 {
+  display: inline;
+}
+```
+
+## 6.8 Display: Block
+> block element는 줄바꿈이 일어난다<br/>
+> 사용자가 크기를 지정할 수 있다<br/>
+> vertical-align과 text-align이 작동하지 않는다<br/>
+```css
+strong {
+  display: block;
+}
+```
+
+## 6.9 Display: Inline-Block
+> Inline element와 Block element의 특징을 모두 갖고있다<br/>
+> Inline element처럼 줄바꿈이 일어나지않는다<br/>
+> Block element처럼 크기를 지정할 수 있다<br/>
+```html
+<div class="rectangle">
+  <p>I’m a rectangle!</p>
+</div>
+<div class="rectangle">
+  <p>So am I!</p>
+</div>
+<div class="rectangle">
+  <p>Me three!</p>
+</div>
+```
+```css
+.rectangle {
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+}
+```
+> 먼저 같은 class로 묶어준다<br/>
+> 그다음 코드를 작성하면 다음과 같은 결과가 나온다<br/>
+> <img src="https://static-assets.codecademy.com/Courses/Learn-CSS/Display-Position/display-inline-block.png" width="600px" height="450px" alt="Border-Box"></img><br/>
+
+## 6.10 Float
+> 원하는 방향으로 끝까지 이동시키고 싶을때 쓰는 property다<br/>
+> text를 image주변에 wrapping할때 주로 사용한다<br/>
+```css
+.orange-section {
+  background-color: orange;
+  width: 50%;
+  float: right;
+}
+```
+
+## 6.11 Clear
+> multiple element를 한번에 float하게 되면 layout이 깨질수 있다<br/>
+> clear property는 element들이 bump 되었을때 어떻게 존재할지 결정해준다<br/>
+> value로 left, right, both, none이 있다<br/>
+> left,right: element의 left,right부분은 다른 element와 겹치지 않는다<br/>
+> both: element끼리 서로 touch 하지 않는다<br/>
+> none: element끼리 자유롭게 side로 빠진다<br/>
+```css
+div {
+  width: 200px;
+  float: left;
+}
+ 
+div.special {
+  clear: left;
+}
+```
+
+<br/><br/><br/>
+
+7.&nbsp;Color
+------------------------------------------------------
+## 7.1 Foreground vs Background
+> Foreground color는 element의 색상이다<br/>
+> Background color는 배경의 색상이다<br/>
+```css
+h1 {
+  color: red;
+  background-color: blue;
+}
+```
+
+## 7.2 Hexadecimal
+> hex color는 code로 color를 나타낸다<br/>
+> 16진법을 쓰고 0~9, A~F를 사용한다<br/>
+```css
+.italian {
+  background-color: #000000;
+}
+```
+
+## 7.3 RGB colors
+> RGB value를 이용해 색을 표현한다<br/>
+> red, gleen, blue 순서로 값이 높을수록 색이 많이 들어간다<br/>
+```css
+.green {
+  background-color: rgb(143,188,143);
+  }
+```
+
+## 7.4 Hex and RGB
+> Hex color의 경우의수는 16^6 = 256^3 이다<br/>
+> RGB또한 256^3으로 총 16777216개의 color를 표현할 수 있다<br/>
+> Hex 에서 RGB로 변환할때 16진법을 이용하면 편하다<br/>
+> 첫 두자리가 red 가운데 두자리가 green 마지막 두자리가 blue다<br/>
+> 예) A8F184를 변환하면 R = 10x16+8, G=15x16+1 B=8x16+4 이므로 RGB값은 168,241,132다<br/>
+
+## 7.5 Hue, Saturation, and Lightness
+> 줄여서 HSL이라고 부른다<br/>
+> hue는 색조, saturation은 채도, Lightness는 명도다<br/>
+> hue는 0이 red, 120이 green, 240이 blue다<br/>
+> saturation은 0%가 음영, 100%가 컬러 최대치이다<br/>
+> lightness는 0%는 검은색, 100%는 흰색이다<br/>
+```css
+body {
+  background-color: hsl(240, 100%, 80%);
+}
+```
+
+## 7.6 Opacity and Alpha
+> opacity는 element의 투명도를 조절하는 property다<br/>
+> 숫자가 작을수록 투명해지며 0과1 사이의 value를 가진다<br/>
+> hsla 또는 rgba로 네번째 값에 alpha가 추가되어 해당부분에 value를 넣어주면 된다<br/>
+> hex color에서도 마지막 두자리에 00~FF의 값을 추가하여 투명도를 조절할 수 있다<br/>
+```css
+.midground {
+  background-color: hsla(225, 100%, 25%, 0.4);
+}
+```
 
 
 
@@ -533,11 +720,12 @@ position: absolute;
 
 
 
-전체를 쓰는 element를 block level element
-자신의 크기만큼을 쓰는 element를 inline element라고 한다
-display:inline; 이라고 하면 inline element가 된다
-display:block; 을 쓰면 block element가 된다
-display:none; 을 쓰면 화면에서 사라진다
+
+
+
+
+
+
 
 
 그리드
