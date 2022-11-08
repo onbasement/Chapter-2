@@ -714,51 +714,112 @@ body {
 }
 ```
 
+<br/><br/><br/>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-그리드
-div, span 는 의미가없고 디자인 용도로만 쓰는 태그
-block은 div
-inline은 span을 사용
-태그의 배치변경을 하고싶으면 grid를 사용하는데 이때 배치변경을 하고싶은 태그들을 다른 태그로 묶어주고 묶은 부모태그에 id를 부여해야한다
-그 후 id가 부여된 부모태그에 대해 css를 적용한다
-display:grid;
-grid-template-columns; 150px 1fr;
-이러면 앞에꺼는 150px 고정 뒤에꺼는 화면 전체에서 남은부분을 사용
-grid-template-columns; 1fr 1fr;
-이러면 반반
-grid-template-columns; 3fr 1fr;
-이러면 3:1
-
-caniuse에서 해당 기술을 이용할 수 있는지 파악하는데 중요하다
-
-반응형 디자인
-수많은 화면에서 다르게 동작해야함
-
-미디어쿼리
-@media(min-width:800px) {
-  div{
-    display:none;
-  }
+8.&nbsp;Typography
+------------------------------------------------------
+## 8.1 Font Family
+> font-family는 font를 바꾸는 property다<br/>
+> web safe font인지 확인해보고 써야한다<br/>
+> fallback fonts는 비슷한 font를 first font가 사용 불가할때를 위해 예비용으로 써주는 것이다<br/>
+> serif(바탕체 계열)와 sans-serif(고딕체 계열)가 주로 사용된다<br/>
+```css
+h1 {
+  font-family: Caslon, Georgia, 'Times New Roman';
 }
-800px 보다 크면 없어지게 만드는 코드
-max를 사용하면 800px보다 작으면 없어지게 만들 수 있다
+font 이름이 여러단어 일때는 ''안에 넣어줘야한다
+```
 
-css 코드의 재사용
-css코드가 중복되서 여러 페이지에서 등장할 때 중복제거가능
-<link rel="stylesheet" href="style.css">
-이렇게 쓰면 style.css 라는 파일을 만들어서
-원래 style 자리에 써주면 된다
-이때 style.css 파일이 cashing되면 네트워크 트래픽이 적어진다
+## 8.2 Font Weight
+> font-weight는 font의 굵기를 조정하는 property다<br/>
+> value값으로 bold, normal, lighter, bolder을 가진다<br/>
+> 일부 font는 1(얇음)에서 1000(굵음)사이의 정수를 넣어서 조정할 수 있다<br/>
+> 400은 normal과 같고 700은 bold와 같다<br/>
+```css
+.left-section {
+  font-weight: 700;
+}
+ 
+.right-section {
+  font-weight: bold; 
+}
+```
+
+## 8.3 Font Style
+> font-style은 font의 모양을 바꾸는 property다<br/>
+> value로 italic, normal, bold 등을 가진다<br/>
+```css
+h3 {
+  font-style: italic;
+}
+```
+
+## 8.4 Text Transformation
+> text-transform는 text의 대소문자를 바꿔주는 property다<br/>
+> value로 capitalize(첫글자만 대문자), uppercase(모두 대문자), lowercase(모두 소문자)등을 가진다<br/>
+```css
+h1 {
+  text-transform: uppercase;
+}
+```
+
+## 8.5 Text Layout
+### 8.5.1 Letter-Spacing
+> letter-spacing은 자간거리를 조절하는 property다<br/>
+> value값으로 px, em을 가진다<br/>
+```css
+p {
+  letter-spacing: 2px;
+}
+```
+### 8.5.2 Word-Spacing
+> word-spacing은 단어사이거리를 조절하는 property다<br/>
+> value값으로 px, em을 가진다<br/>
+```css
+h1 {
+  word-spacing: 0.3em;
+}
+```
+### 8.5.3 Line-Height
+> line-height는 줄 높이를 정하는 property다<br/>
+> value값으로 length(길이), number(글자크기의 배수), percentage(글자크기의 %)등을 가진다<br/>
+```css
+p {
+  line-height: 1.4;
+}
+```
+### 8.5.4 Text-Alignment
+> Text-alignment는 문서를 정렬하는 property다<br/>
+> value값으로 left, right, center, justify등을 가진다<br/>
+```css
+h1 {
+  text-align: right;
+}
+```
+
+## 8.6 Web Fonts
+> Web safe font는 여러개가 있다<br/>
+> 원하는 font를 Google Fonts나 Adobe Fonts에서 host하여 사용할 수 있다<br/>
+> @font-face를 이용하여 font를 사용할 수 있다<br/>
+> font-face를 사용하면 해당 브라우저에 맞는 폰트 파일 유형을 써줘야한다<br/>
+> font type에는 EOT, TrueType&OpenType, WOFF, SVG등이 있다<br/>
+> ttf, otf가 가장 널리 사용되는 파일 형식이다<br/>
+```css
+<head>
+  <!-- Add the link element for Google Fonts along with other metadata -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+이렇게 head부분에 font를 추가해놓고 사용할 수 있다
+```
+```css
+@font-face {
+  font-family: 'MyParagraphFont';
+  src: url('fonts/Roboto.woff2') format('woff2'),
+       url('fonts/Roboto.woff') format('woff'),
+       url('fonts/Roboto.ttf') format('truetype');
+}
+font face를 적용시키는 코드다
+font-face가 selecter가 되고 value값인 MyParagraphFont가 불러온 font의 이름이 된다
+src에는 각각의 파일과 해당 형식에대한 링크가 포함되어야한다
+```
+
