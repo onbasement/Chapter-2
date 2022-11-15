@@ -668,7 +668,7 @@ h1 {
 
 ## 7.2 Hexadecimal
 > hex color는 code로 color를 나타낸다<br/>
-> 16진법을 쓰고 0~9, A~F를 사용한다<br/>
+> 16진법을 쓰고 0에서9, A에서F를 사용한다<br/>
 ```css
 .italian {
   background-color: #000000;
@@ -707,7 +707,7 @@ body {
 > opacity는 element의 투명도를 조절하는 property다<br/>
 > 숫자가 작을수록 투명해지며 0과1 사이의 value를 가진다<br/>
 > hsla 또는 rgba로 네번째 값에 alpha가 추가되어 해당부분에 value를 넣어주면 된다<br/>
-> hex color에서도 마지막 두자리에 00~FF의 값을 추가하여 투명도를 조절할 수 있다<br/>
+> hex color에서도 마지막 두자리에 00부터FF의 값을 추가하여 투명도를 조절할 수 있다<br/>
 ```css
 .midground {
   background-color: hsla(225, 100%, 25%, 0.4);
